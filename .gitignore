@@ -1,0 +1,6 @@
+back/venv/
+back/.env*
+**/__pycache__/
+
+front/node_modules/
+front/.env*
