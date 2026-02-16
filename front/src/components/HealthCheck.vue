@@ -24,10 +24,10 @@
     <div v-if="healthStatus" class="endpoint-card">
       <h3>Health Status</h3>
       <p><strong>Status:</strong> <span class="status-healthy">{{ healthStatus.status }}</span></p>
-      <p><strong>Service:</strong> {{ healthStatus.service }}</p>
-      <p><strong>Version:</strong> {{ healthStatus.version }}</p>
-      <p><strong>Message:</strong> {{ healthStatus.message }}</p>
-      <p><strong>Timestamp:</strong> {{ formatDate(healthStatus.timestamp) }}</p>
+      <p><strong>Service:</strong> {{ healthStatus.database }}</p>
+      <p><strong>Version:</strong> {{ healthStatus.tables }}</p>
+      <p><strong>Message:</strong> {{ healthStatus.tables_count }}</p>
+      <!-- <p><strong>Timestamp:</strong> {{ formatDate(healthStatus.timestamp) }}</p> -->
     </div>
 
     <div v-if="testResult" class="endpoint-card">

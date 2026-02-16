@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.core.config import settings
 from app.api.endpoints import router as api_router
+from app.core.config import settings
 
-# Create FastAPI app
+# Создаем приложение
 app = FastAPI(
     title=settings.app_name,
     version=settings.app_version,
@@ -12,7 +12,7 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
-# Configure CORS
+# Настраиваем CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,
@@ -21,17 +21,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include API routes
+# Подключаем роутер
 app.include_router(api_router, prefix="/api")
 
 @app.get("/")
 async def root():
-    """Root endpoint"""
     return {
         "message": f"Welcome to {settings.app_name}",
         "version": settings.app_version,
         "docs": "/docs",
-        "health_check": "/api/health"
+        "endpoints": {
+            "health": "/api/health",
+            "tables": "/api/tables",
+            "query": "/api/query",
+            "preview": "/api/query/preview/{table_name}"
+        }
     }
 
 
