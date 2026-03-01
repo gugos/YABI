@@ -1,0 +1,14 @@
+{
+  "fieldName": {
+    "label": "filter label",
+    "value": "field_1",
+    "type": "select | multiselect",
+    "is_required": false,
+    "options": [
+      { "label": "option label", "value": "option value" }
+    ],
+    "default": [],
+    "selected": [],
+    "formatter": "function that formats option's label"
+  }
+}

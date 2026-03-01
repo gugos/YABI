@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "axios": "^1.6.2",
+    "monaco-editor": "^0.55.1",
+    "vite-plugin-monaco-editor": "^1.1.0",
     "vue": "^3.3.8",
+    "vue-console-feed": "^0.0.29",
     "vue-router": "^4.2.5",
     "vuetify": "^3.11.8"
   },
